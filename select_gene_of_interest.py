@@ -49,11 +49,12 @@ logging.basicConfig(level=logging.INFO)
 def rename_file(filepath_dir):
     print(filepath_dir)
     fasta = filepath_dir[0].split('/')[-1] #file name
-    output_file = os.path.join(filepath_dir[1], "filtered_"+fasta)
+    output_file = os.path.join(filepath_dir[1][1], "filtered_"+fasta)
+    testing_file = filepath_dir[1][0].split('/')[-1] #file name
 
     #need to include this in argeparse, and add it to list to use parallel core function
     # testing_file=os.path.abspath("trp_ppk_aegypti.fasta")
-    testing_file=os.path.abspath("trp_ppk_aegypti.txt")
+    #testing_file=os.path.abspath("trp_ppk_aegypti.txt")
     # testing_file=os.path.abspath("small_trp_ppk_aegypti.txt")
 
 
@@ -108,14 +109,16 @@ def rename_file(filepath_dir):
 
 #sets up the previous function rename_file for parralel processing
 def rename_file_stack_2(files_dir,
-                           n_workers,                        
-                           out_dir):
+                            my_genes,
+                            n_workers,                        
+                            out_dir):
     files_list=os.listdir(files_dir) #files in input folder
     if ".DS_Store" in files_list:
         files_list.remove(".DS_Store")
     os.makedirs(out_dir, exist_ok=True)  #makes output directory
     inputs = [os.path.join(files_dir, f) for f in files_list] #creates file paths
-    path_dic= {input: out_dir for input in inputs} #dictionary of input file with output file destination
+    out_plus_genes = [my_genes,out_dir] #grouped my_genes and out_dir
+    path_dic= {input: out_plus_genes for input in inputs} #dictionary of input file with output file destination
     logging.info(f'Processing {len(inputs)} images from: {files_dir}') 
     logging.info(f'Using {n_workers} workers')
     with Pool(n_workers) as p: #parallel processor
@@ -138,6 +141,12 @@ if __name__ == '__main__':
                         dest='files_dir',
                         required=True,
                         help='input folder')
+     #creates the argument where input_folder will be inputted
+    parser.add_argument('-g', '--gene_of_interst',
+                        metavar='GENE_OF_INTEREST',
+                        dest='my_genes',
+                        required=True,
+                        help='sectioned summary files of genes of interest from NCBI')
     #creates the argument where the output folder will be inputted
     parser.add_argument('-o', '--output_folder',
                         metavar='OUTPUT_FOLDER',
@@ -152,6 +161,7 @@ if __name__ == '__main__':
                         help='number of cores to use')
     args=parser.parse_args()#parses command line
     rename_file_stack_2(os.path.abspath(args.files_dir),
+                        os.path.abspath(args.my_genes),
                         args.n_workers,
                         os.path.abspath(args.out_dir)
                        )
