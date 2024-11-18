@@ -62,25 +62,45 @@ def rename_file(filepath_dir):
     species_dict={}
     gene_count={}
     counter=0
+    gene_name_2=0
 #could be more efficient if youj switch the nesting of these for loops
     with open(testing_file, 'r') as gene_in : 
             for gene_line in gene_in:
                 # print(gene_line)
                 if re.search('\<Id\>([\d]+)', gene_line):
                     accesion=re.search('\<Id\>([\d]+)', gene_line).group(1).strip()
-                    print(accesion)
-                    next_line=next(gene_in)
-                    gene_name=re.search('\<Name\>([\dA-Za-z\_]+)', next_line).group(1).strip()
-                    print(gene_name)
-
+                    #print(accesion)
+                elif re.search('\<Name\>([\dA-Za-z\_]+)', gene_line):
+                    #next_line=next(gene_in)
+                    gene_name=re.search('\<Name\>([\dA-Za-z\_]+)', gene_line).group(1).strip()
+                    #print(gene_name)
+                elif re.search('\<Other[A-Za-z]+\>([\dA-Za-z\_]+)', gene_line) :
+                    gene_name_2=re.search('\<Other[A-Za-z]+\>([\dA-Za-z\_]+)', gene_line).group(1).strip()
+                    if re.search('([\dA-Za-z\_]+)\<\/Other[A-Za-z]+\>$', gene_line) :
+                        gene_name_3=re.search('([\dA-Za-z\_]+)\<\/Other[A-Za-z]+\>$', gene_line).group(1).strip()
+                        if "AA" in gene_name_2 and "AA" not in gene_name_3:
+                            gene_name_2 = gene_name_3
+                        elif "LOC" in gene_name_2 and "LOC" not in gene_name_3:
+                            gene_name_2 = gene_name_3
+                        else:
+                            pass
+                if gene_name_2:
+                    if "AA" in gene_name and "AA" not in gene_name_2:
+                        true_name = gene_name_2
+                    elif "LOC" in gene_name and "LOC" not in gene_name_2:
+                         true_name = gene_name_2
+                    else:
+                        true_name=gene_name
+                    print(true_name)
                     with open(filepath_dir[0], "r") as species_in:
                         for line in species_in:
                             if counter==0:
                                 firstline=line
                             if f',{accesion},' in line:
                                 # print("yup")
-                                species_dict[gene_name.strip()]=line.strip()
+                                species_dict[true_name.strip()]=line.strip()
                             counter+=1
+                    gene_name_2=0
                 # if re.search('([A-Za-z\s\d\-\/]+)', gene_line):
                 #     gene=re.search('([A-Za-z\s\d\-\/]+)', gene_line).group(1).strip()
                 #     with open(filepath_dir[0], "r") as species_in: #unzips file
