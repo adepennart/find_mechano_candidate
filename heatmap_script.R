@@ -7,67 +7,57 @@ library(DESeq2)
 library(gplots)
 library(RColorBrewer)
 
-#main
+#main 1.1 - antennal tip gene expression
 # ----------------------------------------------------------------------------------------
-#normalized?
+#reading in only the genes of interest (which are already in units transcripts per million(tpm))
 dataframed<- read.csv("filtered_gene_expression_Matthews_NCBI_Gene_ID.csv", sep = ',' ,row.names = "Id.name")
-#head(dataframed)
-#normalized <- as.matrix(read.csv("filtered_gene_expression_Matthews_NCBI_Gene_ID.csv", sep = ',' ,row.names = "Id.name")) 
 
-#small<-head(dataframed)
+#remove unnecessary columns
 small <- subset(dataframed, select = c(-NCBI.Gene.ID,-Gene.ID,-Gene.symbol) )
-#mean <- rowMeans(small)
 
-#small <- as.matrix(small[,2:125])
+#select only abdominal tip columns
 subsetted <- as.matrix(small[,c(17:26,106:108)]) #male female
-#subsetted <- as.matrix(small[,c(17:26)])#female
-#small <- as.matrix(small)
-#small[small == 0] <- NA
-log <- log10(subsetted+1)
-#heatmap.2(small)
-hmcol <- colorRampPalette( brewer.pal(9, "RdBu"))(100)
-hmcol <- rev(hmcol)
-print(hmcol)
-#heatmap.2(log)
-#heatmap.2(small , col = hmcol, Rowv = FALSE ,
- #          Colv = FALSE , scale = "none" , dendrogram = "none" ,
-  #        trace = "none" , margin = c (6 ,6) )
-heatmap.2(log , col = hmcol, scale = "none" , dendrogram = "none" ,
-          trace = "none" , margin = c (9.25 ,14) )
-#heatmap.2(counts(small,normalized=TRUE)[select,])
+#subsetted <- as.matrix(small[,c(17:26)] )#female
 
-##mean?, does it work?
+log <- log10(subsetted+1) #add 1 to have all values above 0 and avoid inf values
+
+hmcol <- rev(colorRampPalette( brewer.pal(9, "RdBu"))(100))#select heatmap colour palette and reverse order (i.e. blue to red)
+#plot
+heatmap.2(log , col = hmcol, scale = "none" , dendrogram = "none" ,
+          trace = "none" , margin = c (9.25 ,14) ) #Rowv = FALSE ,  Colv = FALSE ))
+
+#main 1.2 - average gene expression per tissue
+# ----------------------------------------------------------------------------------------
+#reading in only the genes of interest (which are already in units transcripts per million(tpm))
 dataframed_2<- read.csv("filtered_gene_expression_Matthews_NCBI_Gene_ID.csv", sep = ',' )#,row.names = "Id.name")
-small <- subset(dataframed, select = c(-NCBI.Gene.ID,-Gene.ID,-Gene.symbol) )
-small_t <- t(small)
+
+#remove unnecessary columns
+small_2 <- subset(dataframed, select = c(-NCBI.Gene.ID,-Gene.ID,-Gene.symbol) )
+small_t <- t(small_2) #pivot table
+
+#for loop getting tissue info per column
 tissue <- vector()
 for (variable in row.names(small_t)) {
-  #print(variable)
  # new<-substring(toupper(as.character(variable)),4,5) #here we are disregarding male/female
   new<-substring((as.character(variable)),4,5) #here we are not disregarding male/female
-    #print(new)
   tissue<-append(tissue,new)  
 }
-print(tissue)
-#small_t <- cbind(small_t,tissue)
-#library(dplyr)
-#small_t %>% group_by(row.names) %>% summarise_each(sum)
-#print(row.names(small_t))
-#small_t <- data.frame(cbind(small_t[,1:44],tissue))
-test <- aggregate(small_t,list(tissue),mean)
-test2 <- test[,-1]
-rownames(test2) <- test[,1]
-test_t <- t(test2)
-print(mean(subsetted[1,]))
-#mean <- data.frame(average=rowMeans(small))
-#nm1 <- paste0("Fe", 1:125)
-#print(nm1)
-#subsetted$meanTest <- rowMeans(small[nm1],na.rm = TRUE)
-#meaned <- aggregate(subsetted,mean)
-#meaned <- as.matrix(meaned)
-log2 <- log10(test_t+1)
-#heatmap.2(log2)
-heatmap.2(log2 , col = hmcol, scale = "none" , dendrogram = "none" ,
-          trace = "none" , margin = c (8,8) )
 
+#aggregate values by mean by tissue
+meaned <- aggregate(small_t,list(tissue),mean)
+
+#put tissue in row names
+meaned2 <- meaned[,-1]
+rownames(meaned2) <- meaned[,1]
+
+meaned_t <- t(meaned2)#pivot table
+
+log2 <- log10(meaned_t+1) #add 1 to have all values above 0 and avoid inf values
+
+hmcol <- rev(colorRampPalette( brewer.pal(9, "RdBu"))(100))#select heatmap colour palette and reverse order (i.e. blue to red)
+
+#plot, At female abdominal tip, AT male abdominal tip
+heatmap.2(log2 , col = hmcol, scale = "none" , dendrogram = "none" , 
+          trace = "none" , margin = c (8,8) )
+#get top ten results, AAEL004397 is pain
 print(tail(sort(log2[,2]),10))
