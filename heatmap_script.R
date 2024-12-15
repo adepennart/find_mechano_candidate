@@ -1,5 +1,5 @@
 rm(list=ls())
-setwd("/Users/lamarcki/Documents/AP_PhD_year1/mechanosensation_project/mechanoreceptor_candiate/output/")
+setwd("/Users/lamarcki/Documents/AP_PhD_year1/mechanosensation_project/mechanoreceptor_candiate/output2/")
 #install.packages(c("DESeq2", "gplots","RColorBrewer"))
 
 #import libraries 
@@ -24,7 +24,7 @@ log <- log10(subsetted+1) #add 1 to have all values above 0 and avoid inf values
 hmcol <- rev(colorRampPalette( brewer.pal(9, "RdBu"))(100))#select heatmap colour palette and reverse order (i.e. blue to red)
 #plot
 heatmap.2(log , col = hmcol, scale = "none" , dendrogram = "none" ,
-          trace = "none" , margin = c (9.25 ,14) ) #Rowv = FALSE ,  Colv = FALSE ))
+          trace = "none" , margin = c (9.25 ,18) ) #Rowv = FALSE ,  Colv = FALSE ))
 
 #main 1.2 - average gene expression per tissue
 # ----------------------------------------------------------------------------------------
@@ -58,6 +58,6 @@ hmcol <- rev(colorRampPalette( brewer.pal(9, "RdBu"))(100))#select heatmap colou
 
 #plot, At female abdominal tip, AT male abdominal tip
 heatmap.2(log2 , col = hmcol, scale = "none" , dendrogram = "none" , 
-          trace = "none" , margin = c (8,8) )
+          trace = "none" , margin = c (9.25 ,19) )
 #get top ten results, AAEL004397 is pain
 print(tail(sort(log2[,2]),10))

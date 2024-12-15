@@ -63,12 +63,16 @@ def rename_file(filepath_dir):
     gene_count={}
     counter=0
     gene_name_2=0
+    while_count=2
+
 #could be more efficient if youj switch the nesting of these for loops
     with open(testing_file, 'r') as gene_in : 
             for gene_line in gene_in:
                 # print(gene_line)
                 if re.search('\<Id\>([\d]+)', gene_line):
                     accesion=re.search('\<Id\>([\d]+)', gene_line).group(1).strip()
+                    if '5572129' in accesion:
+                        print("hey")
                     #print(accesion)
                 elif re.search('\<Name\>([\dA-Za-z\_]+)', gene_line):
                     #next_line=next(gene_in)
@@ -84,6 +88,8 @@ def rename_file(filepath_dir):
                             gene_name_2 = gene_name_3
                         else:
                             pass
+                elif re.search('\<Description\>([\dA-Za-z\_\s\-]+)', gene_line):
+                    gene_desc=re.search('\<Description\>([\dA-Za-z\_\s\-]+)', gene_line).group(1).strip()
                 if gene_name_2:
                     if "AA" in gene_name and "AA" not in gene_name_2:
                         true_name = gene_name_2
@@ -91,13 +97,24 @@ def rename_file(filepath_dir):
                          true_name = gene_name_2
                     else:
                         true_name=gene_name
-                    print(true_name)
+                    # print(true_name)
+                    if re.search('AA[\dA-Za-z\_]+', true_name) or re.search('LOC[\dA-Za-z\_]+', true_name):
+                        true_name=gene_desc
+                    # print(true_name)
+
                     with open(filepath_dir[0], "r") as species_in:
                         for line in species_in:
                             if counter==0:
                                 firstline=line
                             if f',{accesion},' in line:
                                 # print("yup")
+                                while 1:
+                                    if true_name.strip() in species_dict:
+                                        true_name=true_name+str(while_count)
+                                        while_count+=1
+                                    else:
+                                        break
+                                print(true_name)
                                 species_dict[true_name.strip()]=line.strip()
                             counter+=1
                     gene_name_2=0
@@ -117,11 +134,11 @@ def rename_file(filepath_dir):
                 #     print(f"{gene_line.strip()} not found")
                 # counter=0
 
-    print(len(species_dict))
+   #print(len(species_dict))
     with open(output_file, 'w') as f_out: 
         print(f'Id name,{firstline.strip()}', file=f_out)
         for key,value in species_dict.items(): 
-            print(f'{key.strip()},{value.strip()}')
+            # print(f'{key.strip()},{value.strip()}')
             print(f'{key.strip()},{value.strip()}', file=f_out)
 
             # print(f'{key.strip()}', file=f_out)
@@ -162,7 +179,7 @@ if __name__ == '__main__':
                         required=True,
                         help='input folder')
      #creates the argument where input_folder will be inputted
-    parser.add_argument('-g', '--gene_of_interst',
+    parser.add_argument('-g', '--gene_of_interest',
                         metavar='GENE_OF_INTEREST',
                         dest='my_genes',
                         required=True,
