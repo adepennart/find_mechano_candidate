@@ -101,9 +101,11 @@ source:
 
 ### tmc
 Only one tmc exists in *D. melanogaster*, however in other model species tmc exists divided into three subfamilies .
+
 <a href="figures/tmc_tree.png">
-    <img src="figures/tmc_tree.png" width="500" height="200">
+    <img src="figures/tmc_tree.png" width="300" height="300">
   </a>
+  
 3 tmcs were found in *A. aegypti*
 source:
 - querying flybase (which in turn is querying orthodb) finds 1 uncharacterized gene. https://www.orthodb.org/?ncbi=5566135
