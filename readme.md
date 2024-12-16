@@ -97,8 +97,8 @@ source:
 
 ### tmc
 Only one tmc exists in *D. melanogaster*, however in other model species tmc exists divided into three subfamilies .
-<a href="figures/tmc_tree.jpg">
-    <img src="figures/tmc_tree.jpg">
+<a href="figures/tmc_tree.png">
+    <img src="figures/tmc_tree.png">
   </a>
 3 tmcs were found in *A. aegypti*
 source:
