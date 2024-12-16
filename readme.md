@@ -189,6 +189,10 @@ The script runs with Rstudio=2022.12.0+353. Rstudio can be downloading following
 https://posit.co/download/rstudio-desktop/
 Code not yet tested in R.
 
+## fixes
+currently not completely documented code.
+R script does not currently output files.
+
 ## Usage
 
 ### Part1: Querying NCBI
@@ -212,7 +216,7 @@ Before running the code, the second line must be changed to the directory where 
 
 Once this is changed the script can be run by pressing SOURCE in the top right of the code pane in Rstudio.
 
-The final output should be two pdfs plotting the data and a list of the top ten most expressed genes.
+The final output should be two pdfs plotting the data (abdominal_tip_mechano.pdf,all_tissue.pdf) and a list of the top ten most expressed genes.
 
     transient2                                ppk322 
      0.8233333                             0.8371717 
