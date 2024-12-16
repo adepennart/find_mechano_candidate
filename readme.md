@@ -46,28 +46,23 @@ Based off research conducted in *Drosophila melanogaster*, among other model org
 - TMEM63 (OSCA)
 
 ### TRP
-13 trp genes exist in *Drosophila melanogaster*.
-TRP,TRPL,TRPgamma,TRPA1,Pain,Pyx, Wtrw, Nompc,Iav,Nan,TRPM,Amo,TRPML. belonging two 7 subgroups[2].
-TRPC, TRPN, TRPM, TRPV
+13 trp genes exist in *Drosophila melanogaster*,TRP,TRPL,TRPgamma,TRPA1,Pain,Pyx, Wtrw, Nompc,Iav,Nan,TRPM,Amo,TRPML. These trp channels belong to 4 subgroups, TRPC, TRPN, TRPM, TRPV[2].
 <a href="figures/trp_tree.jpg">
     <img src="figures/trp_tree.jpg">
   </a>
 
-
-
-
-15 are found in *aedes aegypti*.
+15 are found in *Aedes aegypti*.
 source:
 - querying flybase(which in turn is querying orthodb)
 - querying NCBI finds 15 (as seen below)
 
 #### query flybase
-from flybase i found a ortholog in *aedes aegypti* for these 4 candidate trp channels:
+from flybase i found a ortholog in *Aedes aegypti* for these 4 candidate trp channels:
 - trp = trp (gi=5566497) 
 - painless = pain (gi=5568431) 
 - iav =  iav (gi=5571743)
 - TRPML = mucolipin (gi=5571248) 
-Running a blast on uniprot on all  *aedes aegypti* with a minimum e-value of <0.000001 i found the following 15 trp channels.
+Running a blast on uniprot on all  *Aedes aegypti* genes with a minimum e-value of <0.000001 i found the following 15 trp channels.
 
 ##### trp
 Trp-5566497 (two isoform2)
@@ -93,17 +88,28 @@ TRPML-mucolipin – 5571248(2 isoforms)
 
 ### ppk
 32 are found in mosquitoes.
+<a href="figures/ppk_tree.png">
+    <img src="figures/ppk_tree.png">
+  </a>
 source:
 - paper cites 32 [3]
 - querying NCBI finds 32
 
 ### tmc
-this is looking like there is the more typical tmc number (see tree figure)
-but need to check one to one ratio
+Only one tmc exists in *D. melanogaster*, however in other model species tmc exists divided into three subfamilies .
+<a href="figures/tmc_tree.jpg">
+    <img src="figures/tmc_tree.jpg">
+  </a>
+3 tmcs were found in *A. aegypti*
+source:
+- querying flybase (which in turn is querying orthodb) finds 1 uncharacterized gene. https://www.orthodb.org/?ncbi=5566135![image](https://github.com/user-attachments/assets/b8e79257-49ae-40b5-9f8f-323c36d73098)
+
+- querying NCBI finds 2 (tmc5,tmc7)
+  - Blasting tmc7 on NCBI against all *A. aegypti* genes the only returns tmc5 and tmc7 (and their isoforms).
 
 ### piezo
 piezo =1
-on ortho db only one
+on orthodb only one.
 https://flybase.org/reports/FBgn0264953.htm
 could blast to see if any paralogs
 
