@@ -49,7 +49,7 @@ Based off research conducted in *Drosophila melanogaster*, among other model org
 13 trp genes exist in *Drosophila melanogaster*.
 TRP,TRPL,TRPgamma,TRPA1,Pain,Pyx, Wtrw, Nompc,Iav,Nan,TRPM,Amo,TRPML. belonging two 7 subgroups[2].
 TRPC, TRPN, TRPM, TRPV
-[tree](figures/trp_tree.jpeg)
+[tree](figures/trp_tree.jpg)
 
 
 
