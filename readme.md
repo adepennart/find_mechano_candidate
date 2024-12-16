@@ -51,6 +51,7 @@ Based off research conducted in *Drosophila melanogaster*, among other model org
     <img src="figures/trp_tree.jpg">
   </a>
 
+
 15 are found in *Aedes aegypti*.
 source:
 - querying flybase(which in turn is querying orthodb)
