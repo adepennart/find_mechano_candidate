@@ -1,3 +1,32 @@
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#About">About</a>
+    </li>
+    <li>
+      <a href="#Research">Research</a>
+      </li>
+      <li>
+      <a href="#Installation">Installation</a>
+      <ul>
+          <li><a href="#Dependencies">Dependencies</a></li>
+      </ul>
+    </li>
+    <li><a href="#Usage">Usage</a></li>
+      <ul>
+        <li><a href="#Input">Input</a></li>
+      </ul>
+        <li>
+      <a href="#Analysis">Analysis</a>
+      </li>
+        <li>
+      <a href="#Reference">Reference</a>
+      </li>
+
+  </ol>
+</details>
 ## About
 First, research to find out what genes are of interest.
 
@@ -9,21 +38,19 @@ Third, checking litterature to determine best fit.
 
 ## Research
 ### finding mechanosensory families
-Based off research conducted in *Drosophila melanogaster*, among other model organisms, several gene families are known to be mechanosensory.
+Based off research conducted in *Drosophila melanogaster*, among other model organisms, several gene families are known to be mechanosensory[1].
 - TRP (transient receptor potential)
 - PPK (pickpockets, a subfamily of Deg/enacs)
 - Piezo
 - TMC (transmembrane channel)
 - TMEM63 (OSCA)
-https://www.nature.com/articles/s41586-020-2933-1
-Under gene readings in notion is there the breakdown of insect specific mechanoreceptors.
 
 ### TRP
 13 trp genes exist in *Drosophila melanogaster*.
-TRP,TRPL,TRPgamma,TRPA1,Pain,Pyx, Wtrw, Nompc,Iav,Nan,TRPM,Amo,TRPML. belonging two 7 subgroups.
+TRP,TRPL,TRPgamma,TRPA1,Pain,Pyx, Wtrw, Nompc,Iav,Nan,TRPM,Amo,TRPML. belonging two 7 subgroups[2].
 TRPC, TRPN, TRPM, TRPV
 (put tree here)
-https://www.sciencedirect.com/science/article/pii/S0024320512003918?casa_token=SDnJ3dKW0AkAAAAA:8LK7f2Q1OeE4yzvhCXnELpoJP4pntFxXTu_TNk8pZW3qGIsw99-afhnJlLwj3HkINqfaSAG-Ug
+
 
 15 are found in *aedes aegypti*.
 source:
@@ -63,7 +90,7 @@ TRPML-mucolipin – 5571248(2 isoforms)
 ### ppk
 32 are found in mosquitoes.
 source:
-- paper cites 32 (https://academic.oup.com/gbe/article/13/9/evab185/6352500)
+- paper cites 32 [3]
 - querying NCBI finds 32
 
 ### tmc
@@ -170,95 +197,85 @@ Once this is changed the script can be run by pressing SOURCE in the top right o
 
 The final output should be two pdfs plotting the data and a list of the top ten most expressed genes.
 
+    transient2                                ppk322 
+     0.8233333                             0.8371717 
+        ppk203                                ppk306 
+     0.9377027                             0.9443272 
+     painless2                                Tmem63                                0.9990644                             1.4740794 
+     mucolipin                    tmc-like protein 5 
+     1.5855028                             1.5993977 
+    piezo-type                                  pain 
+     1.6310306                             1.7238047 
+
 ## Analysis
-                                                  transient2                                                       ppk322 
-                                                   0.8233333                                                    0.8371717 
-                                                      ppk203                                                       ppk306 
-                                                   0.9377027                                                    0.9443272 
-transient receptor potential cation channel protein painless                                                       Tmem63 
-                                                   0.9990644                                                    1.4740794 
-                                                   mucolipin                         transmembrane channel-like protein 5 
-                                                   1.5855028                                                    1.5993977 
-           piezo-type mechanosensitive ion channel component                                                         pain 
-                                                   1.6310306                                                    1.7238047 
-
-
 As we are looking for receptors that might be triggered with minute differences in textures, we are likely looking at a gentle touch receptor.
 
 ### Likely not candidates
 Removing genes that are not associated with gentle touch or touch at all, from our list of top ten candidate receptors, this brings it down to 8.
 
-~~pain~~
-piezo
-tmc 5
-~~TRPML-mucolipin~~
-Tmem63
-painless-like
-ppk306
-ppk203
-ppk322
-transient 2 (pyrexia-like)
+1. ~~pain~~
+1. piezo
+1. tmc 5
+1. ~~TRPML-mucolipin~~
+1. Tmem63
+1. painless-like
+1. ppk306
+1. ppk203
+1. ppk322
+1. transient 2 (pyrexia-like)
 
 #### Pain and Pain-like
 Pain (and ppk) sense friction during pupation, when knocked out pupation height is wrong as they likely can't sense where they are in the fruit before pupating
-Pain (TRPA1) allows for the response to noxious touch and involved in escape response to strong mechanical stimuli
-https://www.sciencedirect.com/science/article/pii/S0024320512003918?casa_token=SDnJ3dKW0AkAAAAA:8LK7f2Q1OeE4yzvhCXnELpoJP4pntFxXTu_TNk8pZW3qGIsw99-afhnJlLwj3HkINqfaSAG-Ug
+Pain (TRPA1) allows for the response to noxious touch and involved in escape response to strong mechanical stimuli[2].
 
 #### TRPML
-localized in plasma and not associated with touch, but rather neurodengenration and motor deficiencies, accumulation of lysosome vesiciles (similar results in humans)
-https://www.sciencedirect.com/science/article/pii/S0024320512003918?casa_token=SDnJ3dKW0AkAAAAA:8LK7f2Q1OeE4yzvhCXnELpoJP4pntFxXTu_TNk8pZW3qGIsw99-afhnJlLwj3HkINqfaSAG-Ug
+localized in plasma and not associated with touch, but rather neurodengenration and motor deficiencies, accumulation of lysosome vesiciles (similar results in humans)[2].
 
 ### improbably candidates
-From our list of top 10 candidate receptors, 2 genes seem to have paralogs not found in *D. melanogaster* and whose ortholog in D. melanogaster* is not associated tp gentle touch receptors.
+From our list of top 10 candidate receptors, 2 genes seem to have paralogs not found in *D. melanogaster* and whose ortholog in D. melanogaster* is not associated to gentle touch receptors.
 
-~~pain~~
-piezo
-tmc 5
-~~TRPML-mucolipin~~
-Tmem63
-~~painless-like~~
-ppk306
-~~ppk203~~
-ppk322
-~~transient 2 (pyrexia-like)~~
+1. ~~pain~~
+1. piezo
+1. tmc 5
+1. ~~TRPML-mucolipin~~
+1. Tmem63
+1. ~~painless-like~~
+1. ppk306
+1. ~~ppk203~~
+1. ppk322
+1. ~~transient 2 (pyrexia-like)~~
 
 
 #### Pain-like
-One of two orthologs to pain in drosophila. If orthologous in function to pain, not as interesting of a receptor. 
-https://www.sciencedirect.com/science/article/pii/S0024320512003918?casa_token=SDnJ3dKW0AkAAAAA:8LK7f2Q1OeE4yzvhCXnELpoJP4pntFxXTu_TNk8pZW3qGIsw99-afhnJlLwj3HkINqfaSAG-Ug
+One of two orthologs to pain in drosophila. If orthologous in function to pain, not as interesting of a receptor[2]. 
 
 #### pyrexia-like
-nociception response to high heat. and involved in gravitaxis.
-https://www.sciencedirect.com/science/article/pii/S0024320512003918?casa_token=SDnJ3dKW0AkAAAAA:8LK7f2Q1OeE4yzvhCXnELpoJP4pntFxXTu_TNk8pZW3qGIsw99-afhnJlLwj3HkINqfaSAG-Ug
+nociception response to high heat. and involved in gravitaxis[2].
 
 #### ppk 203
 In the ppk phylogenetic tree most related to nach, ppk18 and ppk27. nach is associated to liquid clearance in the tracheal system (flybase, 2024).Both ppk18 and ppk27 are predicted to be sodium ion transmemebrane transport genes. Both have no phenotype, both are viable but ppk27 is partially lethal with a majority dying.
 
 ### likely candidates
 That leaves us with 5 potential gentle touch receptors.
-~~pain~~
-piezo
-tmc 5
-~~TRPML-mucolipin~~
-Tmem63
-~~painless-like~~
-ppk306
-~~ppk203~~
-ppk322
-~~transient 2 (pyrexia-like)~~
+1. ~~pain~~
+1. piezo
+1. tmc 5
+1. ~~TRPML-mucolipin~~
+1. Tmem63
+1. ~~painless-like~~
+1. ppk306
+1. ~~ppk203~~
+1. ppk322
+1. ~~transient 2 (pyrexia-like)~~
 
 #### Piezo
-Piezo is known as a mechanotransducing gene and has seen to have impacts on egg-laying preferecne when there are mild differences in substrate hardness. 
-https://www.sciencedirect.com/science/article/pii/S0960982220307636
+Piezo is known as a mechanotransducing gene and has seen to have impacts on egg-laying preferecne when there are mild differences in substrate hardness[4].
 
 #### tmc 5
-Only one tmc gene exists within flies (belonging to the first subfamily of tmcs). However, in *A. aegypti* there are 3 tmc genes each belonging to separate subfamily of tmcs. The least information is known on tmc 5, however tmc 7 has recently been seen in mice to supress piezo activity in peripheral neurons hence reducing mechanosensation in the periphery. https://www.cell.com/cell-reports/fulltext/S2211-1247(24)00342-5?uuid=uuid%3A56769d7d-26ce-43e7-9c76-8f12ac9d034b
-tmc 7 in *A. aedes* is also highly expressed, just falling out of the top ten most expressed mechanosensory genes in the abdominal tip.
-In *D. melanogaster* tmc has also been seen to mediate subtle difference in substrate when determining egg-laying sites. https://www.sciencedirect.com/science/article/pii/S0960982220307636
+Only one tmc gene exists within flies (belonging to the first subfamily of tmcs). However, in *A. aegypti* there are 3 tmc genes each belonging to separate subfamily of tmcs. The least information is known on tmc 5, however tmc 7 has recently been seen in mice to supress piezo activity in peripheral neurons hence reducing mechanosensation in the periphery[5]. tmc 7 in *A. aedes* is also highly expressed, just falling out of the top ten most expressed mechanosensory genes in the abdominal tip. In *D. melanogaster* tmc has also been seen to mediate subtle difference in substrate when determining egg-laying sites[4]. 
 
 #### Tmem63
-Tmem63 has been seen to mediate food preference based on food grittiness. It is done through the deflection of sensila on the labellum.
-https://doi.org/10.1016/j.cub.2021.02.007
+Tmem63 has been seen to mediate food preference based on food grittiness. It is done through the deflection of sensila on the labellum[6].
 
 #### ppk306 & 322
 Both of these ppks seem to fall in the same part ofthe phylogenetic tree however ppk322 seems to be more closely related to ppk,rpk and ppk26 which are all mechanosensitive genes. (flybase,2024)
@@ -267,13 +284,17 @@ Both of these ppks seem to fall in the same part ofthe phylogenetic tree however
 Based on observations from previous papers (cite) is has been hypothesized that deflection of sensila on the abdominal tip positvely affect egg-laying in mosquitoes. Knowing mechanosensory neuron types from *D. melanogaster*, type I as opposed to type II are reportedly sensila based mechanosensroy neurons. This immediately places both **Tmem63** and **piezo** as leading candidates to test prefential egg-laying on rougher surfaces in *A. aegypti*. 
 
 Ranking the candidate genes:
-- Tmem63
-- ppk322
-- tmc 5
-- tmc 7 
+1. Tmem63
+1. ppk322
+1. tmc 5
+1. tmc 7 
 
 *piezo and ppk306 have some part of the gene knockout steps done. talk to Ben on what to do.
  
- 
-
-
+## Reference
+1. Kefauver, J. M., A. B. Ward, and A. Patapoutian. “Discoveries in Structure and Physiology of Mechanically Activated Ion Channels.” Nature 587, no. 7835 (November 2020): 567–76. https://doi.org/10.1038/s41586-020-2933-1.
+2. Fowler, Melissa A., and Craig Montell. “Drosophila TRP Channels and Animal Behavior.” Life Sciences, TRP channels, GPCRS, endolipids and natural products: A tetrad that makes sense, 92, no. 8 (March 19, 2013): 394–403. https://doi.org/10.1016/j.lfs.2012.07.029.
+3. Latorre-Estivalis, Jose Manuel, Francisca C Almeida, Gina Pontes, Hernán Dopazo, Romina B Barrozo, and Marcelo Gustavo Lorenzo. “Evolution of the Insect PPK Gene Family.” Genome Biology and Evolution 13, no. 9 (September 1, 2021): evab185. https://doi.org/10.1093/gbe/evab185.
+4. Zhang, Liwei, Jie Yu, Xuan Guo, Jianhuan Wei, Ting Liu, and Wei Zhang. “Parallel Mechanosensory Pathways Direct Oviposition Decision-Making in Drosophila.” Current Biology 30, no. 16 (August 17, 2020): 3075-3088.e4. https://doi.org/10.1016/j.cub.2020.05.076.
+5. Zhang, Xiaoxue, Jichen Shao, Caixue Wang, Chao Liu, Han Hao, Xinmeng Li, Yating An, et al. “TMC7 Functions as a Suppressor of Piezo2 in Primary Sensory Neurons Blunting Peripheral Mechanotransduction.” Cell Reports 43, no. 4 (April 23, 2024). https://doi.org/10.1016/j.celrep.2024.114014.
+6. Li, Qiaoran, and Craig Montell. “Mechanism for Food Texture Preference Based on Grittiness.” Current Biology 31, no. 9 (May 10, 2021): 1850-1861.e6. https://doi.org/10.1016/j.cub.2021.02.007.
