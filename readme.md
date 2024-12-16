@@ -50,9 +50,9 @@ Based off research conducted in *Drosophila melanogaster*, among other model org
 TRP,TRPL,TRPgamma,TRPA1,Pain,Pyx, Wtrw, Nompc,Iav,Nan,TRPM,Amo,TRPML. belonging two 7 subgroups[2].
 TRPC, TRPN, TRPM, TRPV
 <a href="figures/trp_tree.jpg">
-    <img src="figures/trp_tree.jpg" alt="Logo" width="80" height="80">
+    <img src="figures/trp_tree.jpg">
   </a>
-[tree](figures/trp_tree.jpg)
+
 
 
 
