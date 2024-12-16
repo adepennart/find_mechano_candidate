@@ -65,19 +65,19 @@ from flybase i found a ortholog in *Aedes aegypti* for these 4 candidate trp cha
 Running a blast on uniprot on all  *Aedes aegypti* genes with a minimum e-value of <0.000001 i found the following 15 trp channels.
 
 ##### trp
-Trp-5566497 (two isoform2)
-Trpgamma- 5565862 (3 isoforms)
-Trp-like – 110681253 (2 isoforms)
-Nompc-5575210 (9 isoforms?)
-Trpm – 5577794 (10 isoforms)
+- Trp-5566497 (two isoform2)
+- Trpgamma- 5565862 (3 isoforms)
+- Trp-like – 110681253 (2 isoforms)
+- Nompc-5575210 (9 isoforms?)
+- Trpm – 5577794 (10 isoforms)
 
 ##### pain
-Pain – 5568431
-Pain-like 5564686
-Pain-like 5572129
-Pyx – 5564219
-(wtrw)Pyx-like 110679259
-(wtrw)Pyx-like 110679258
+- Pain – 5568431
+- Pain-like 5564686
+- Pain-like 5572129
+- Pyx – 5564219
+- (wtrw)Pyx-like 110679259
+- (wtrw)Pyx-like 110679258
 
 ##### iav
 iav - 5571743
