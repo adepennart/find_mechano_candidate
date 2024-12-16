@@ -47,8 +47,9 @@ Based off research conducted in *Drosophila melanogaster*, among other model org
 
 ### TRP
 13 trp genes exist in *Drosophila melanogaster*,TRP,TRPL,TRPgamma,TRPA1,Pain,Pyx, Wtrw, Nompc,Iav,Nan,TRPM,Amo,TRPML. These trp channels belong to 4 subgroups, TRPC, TRPN, TRPM, TRPV[2].
+
 <a href="figures/trp_tree.jpg">
-    <img src="figures/trp_tree.jpg">
+    <img src="figures/trp_tree.jpg" width="500" height="200">
   </a>
 
 
