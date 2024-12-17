@@ -61,3 +61,5 @@ heatmap.2(log2 , col = hmcol, scale = "none" , dendrogram = "none" ,
           trace = "none" , margin = c (9.25 ,19) )
 #get top ten results, AAEL004397 is pain
 print(tail(sort(log2[,2]),10))
+top_ten<-(tail(sort(log2[,2]),10))
+write.csv(top_ten, "top_ten_mechano.csv", row.names=FALSE)
