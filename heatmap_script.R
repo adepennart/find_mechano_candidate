@@ -23,9 +23,10 @@ log <- log10(subsetted+1) #add 1 to have all values above 0 and avoid inf values
 
 hmcol <- rev(colorRampPalette( brewer.pal(9, "RdBu"))(100))#select heatmap colour palette and reverse order (i.e. blue to red)
 #plot
+pdf("all_tissue_mechano.pdf") 
 heatmap.2(log , col = hmcol, scale = "none" , dendrogram = "none" ,
           trace = "none" , margin = c (9.25 ,18) ) #Rowv = FALSE ,  Colv = FALSE ))
-
+dev.off()
 #main 1.2 - average gene expression per tissue
 # ----------------------------------------------------------------------------------------
 #reading in only the genes of interest (which are already in units transcripts per million(tpm))
@@ -57,9 +58,12 @@ log2 <- log10(meaned_t+1) #add 1 to have all values above 0 and avoid inf values
 hmcol <- rev(colorRampPalette( brewer.pal(9, "RdBu"))(100))#select heatmap colour palette and reverse order (i.e. blue to red)
 
 #plot, At female abdominal tip, AT male abdominal tip
+pdf("abdominal_tip_mechano.pdf") 
 heatmap.2(log2 , col = hmcol, scale = "none" , dendrogram = "none" , 
           trace = "none" , margin = c (9.25 ,19) )
+dev.off()
+
 #get top ten results, AAEL004397 is pain
 print(tail(sort(log2[,2]),10))
 top_ten<-(tail(sort(log2[,2]),10))
-write.csv(top_ten, "top_ten_mechano.csv", row.names=FALSE)
+write.csv(top_ten, "top_ten_mechano.csv")

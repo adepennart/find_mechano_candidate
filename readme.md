@@ -15,9 +15,6 @@
       </ul>
     </li>
     <li><a href="#Usage">Usage</a></li>
-      <ul>
-        <li><a href="#Input">Input</a></li>
-      </ul>
         <li>
       <a href="#Analysis">Analysis</a>
       </li>
@@ -307,8 +304,10 @@ Both of these ppks seem to fall in the same part ofthe phylogenetic tree however
 Based on observations from previous papers (cite) is has been hypothesized that deflection of sensila on the abdominal tip positvely affect egg-laying in mosquitoes. Knowing mechanosensory neuron types from *D. melanogaster*, type I as opposed to type II are reportedly sensila based mechanosensroy neurons. This immediately places both **Tmem63** and **piezo** as leading candidates to test prefential egg-laying on rougher surfaces in *A. aegypti*. 
 
 Ranking the candidate genes:
+1. piezo*
 1. Tmem63
 1. ppk322
+1. ppk306*
 1. tmc 5
 1. tmc 7 
 
