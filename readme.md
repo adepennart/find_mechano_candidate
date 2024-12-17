@@ -192,6 +192,8 @@ Code not yet tested in R.
 ## fixes
 currently not completely documented code.
 R script does not currently output files.
+cite sensila paper for mosquitoes
+cite where ppk,rpk as mechanosensory is from.
 
 ## Usage
 
