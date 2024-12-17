@@ -43,7 +43,7 @@ Based off research conducted in *Drosophila melanogaster*, among other model org
 - TMEM63 (OSCA)
 
 ### TRP
-13 trp genes exist in *Drosophila melanogaster*,TRP,TRPL,TRPgamma,TRPA1,Pain,Pyx, Wtrw, Nompc,Iav,Nan,TRPM,Amo,TRPML. These trp channels belong to 4 subgroups, TRPC, TRPN, TRPM, TRPV[2].
+13 trp genes exist in *Drosophila melanogaster*,TRP,TRPL,TRPgamma,TRPA1,Pain,Pyx, Wtrw, Nompc,Iav,Nan,TRPM,Amo,TRPML. These trp channels belong to 4 subgroups, TRPC, TRPN, TRPM, TRPV[2](see figure below,[2]).
 
 <a href="figures/trp_tree.jpg">
     <img src="figures/trp_tree.jpg" width="500" height="200">
@@ -87,18 +87,12 @@ TRPML-mucolipin – 5571248(2 isoforms)
 
 ### ppk
 32 are found in mosquitoes.
-
-<a href="figures/ppk_tree.png">
-    <img src="figures/ppk_tree.png" width="250" height="400">
-  </a>
-
-
 source:
 - paper cites 32 [3]
 - querying NCBI finds 32
 
 ### tmc
-Only one tmc exists in *D. melanogaster*, however in other model species tmc exists divided into three subfamilies .
+Only one tmc exists in *D. melanogaster*, however in other model species tmc exists divided into three subfamilies (see figure below, Yue, 2019).
 
 <a href="figures/tmc_tree.png">
     <img src="figures/tmc_tree.png" width="300" height="300">
@@ -190,7 +184,6 @@ Code not yet tested in R.
 currently not completely documented code.
 R script does not currently output files.
 cite sensila paper for mosquitoes
-cite where ppk,rpk as mechanosensory is from.
 
 ## Usage
 
@@ -215,7 +208,7 @@ Before running the code, the second line must be changed to the directory where 
 
 Once this is changed the script can be run by pressing SOURCE in the top right of the code pane in Rstudio.
 
-The final output should be two pdfs plotting the data (abdominal_tip_mechano.pdf,all_tissue.pdf) and a list of the top ten most expressed genes.
+The final output should be two pdfs plotting the data (abdominal_tip_mechano.pdf,all_tissue_mechano.pdf) and a list of the top ten most expressed mechanosensory genes in the abdominal tip of the female *A. aegypti*.
 
     transient2                                ppk322 
      0.8233333                             0.8371717 
@@ -230,7 +223,7 @@ The final output should be two pdfs plotting the data (abdominal_tip_mechano.pdf
 ## Analysis
 As we are looking for receptors that might be triggered with minute differences in textures, we are likely looking at a gentle touch receptor.
 
-### Likely not candidates
+### unlikely candidates
 Removing genes that are not associated with gentle touch or touch at all, from our list of top ten candidate receptors, this brings it down to 8.
 
 1. ~~pain~~
@@ -251,7 +244,7 @@ Pain (TRPA1) allows for the response to noxious touch and involved in escape res
 #### TRPML
 localized in plasma and not associated with touch, but rather neurodengenration and motor deficiencies, accumulation of lysosome vesiciles (similar results in humans)[2].
 
-### improbably candidates
+### improbable candidates
 From our list of top 10 candidate receptors, 2 genes seem to have paralogs not found in *D. melanogaster* and whose ortholog in D. melanogaster* is not associated to gentle touch receptors.
 
 1. ~~pain~~
@@ -273,7 +266,12 @@ One of two orthologs to pain in drosophila. If orthologous in function to pain, 
 nociception response to high heat. and involved in gravitaxis[2].
 
 #### ppk 203
-In the ppk phylogenetic tree most related to nach, ppk18 and ppk27. nach is associated to liquid clearance in the tracheal system (flybase, 2024).Both ppk18 and ppk27 are predicted to be sodium ion transmemebrane transport genes. Both have no phenotype, both are viable but ppk27 is partially lethal with a majority dying.
+In the ppk phylogenetic tree most related to nach, ppk18 and ppk27 (see figure below, Matthews 2019). nach is associated to liquid clearance in the tracheal system (flybase, 2024).Both ppk18 and ppk27 are predicted to be sodium ion transmemebrane transport genes. Both have no phenotype, both are viable but ppk27 is partially lethal with a majority dying.
+
+<a href="figures/ppk_tree.png">
+    <img src="figures/ppk_tree.png" width="250" height="400">
+  </a>
+
 
 ### likely candidates
 That leaves us with 5 potential gentle touch receptors.
@@ -298,7 +296,7 @@ Only one tmc gene exists within flies (belonging to the first subfamily of tmcs)
 Tmem63 has been seen to mediate food preference based on food grittiness. It is done through the deflection of sensila on the labellum[6].
 
 #### ppk306 & 322
-Both of these ppks seem to fall in the same part ofthe phylogenetic tree however ppk322 seems to be more closely related to ppk,rpk and ppk26 which are all mechanosensitive genes. (flybase,2024)
+Both of these ppks seem to fall in the same part of the phylogenetic tree however ppk322 seems to be more closely related to ppk,rpk and ppk26 which are all mechanosensitive genes. rpk is expressed in class III multidendritic neurons required fo gentle touch in *D. melanogaster* larvae [7]. Both ppk and ppk26 are present in multidendritic class IV neurons and use the same pathway for mechanical nociception in *D. melanogaster* larvae although ppk is also involved in thermal nociception[8,9].
 
 ### best candidates
 Based on observations from previous papers (cite) is has been hypothesized that deflection of sensila on the abdominal tip positvely affect egg-laying in mosquitoes. Knowing mechanosensory neuron types from *D. melanogaster*, type I as opposed to type II are reportedly sensila based mechanosensroy neurons. This immediately places both **Tmem63** and **piezo** as leading candidates to test prefential egg-laying on rougher surfaces in *A. aegypti*. 
@@ -320,3 +318,6 @@ Ranking the candidate genes:
 4. Zhang, Liwei, Jie Yu, Xuan Guo, Jianhuan Wei, Ting Liu, and Wei Zhang. “Parallel Mechanosensory Pathways Direct Oviposition Decision-Making in Drosophila.” Current Biology 30, no. 16 (August 17, 2020): 3075-3088.e4. https://doi.org/10.1016/j.cub.2020.05.076.
 5. Zhang, Xiaoxue, Jichen Shao, Caixue Wang, Chao Liu, Han Hao, Xinmeng Li, Yating An, et al. “TMC7 Functions as a Suppressor of Piezo2 in Primary Sensory Neurons Blunting Peripheral Mechanotransduction.” Cell Reports 43, no. 4 (April 23, 2024). https://doi.org/10.1016/j.celrep.2024.114014.
 6. Li, Qiaoran, and Craig Montell. “Mechanism for Food Texture Preference Based on Grittiness.” Current Biology 31, no. 9 (May 10, 2021): 1850-1861.e6. https://doi.org/10.1016/j.cub.2021.02.007.
+7. Tsubouchi, Asako, Jason C. Caldwell, and W. Daniel Tracey. “Dendritic Filopodia, Ripped Pocket, NOMPC, and NMDARs Contribute to the Sense of Touch in Drosophila Larvae.” Current Biology 22, no. 22 (November 20, 2012): 2124–34. https://doi.org/10.1016/j.cub.2012.09.019.
+8. Guo, Yanmeng, Yuping Wang, Qingxiu Wang, and Zuoren Wang. “The Role of PPK26 in Drosophila Larval Mechanical Nociception.” Cell Reports 9, no. 4 (November 20, 2014): 1183–90. https://doi.org/10.1016/j.celrep.2014.10.020.
+9. Zhong, Lixian, Richard Y. Hwang, and W. Daniel Tracey. “Pickpocket Is a DEG/ENaC Protein Required for Mechanical Nociception in Drosophila Larvae.” Current Biology 20, no. 5 (March 9, 2010): 429–34. https://doi.org/10.1016/j.cub.2009.12.057.
