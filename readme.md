@@ -182,7 +182,8 @@ Code not yet tested in R.
 
 ## fixes
 currently not completely documented code.
-R script does not currently output files.
+include a more detailed methods on how you queried databases. (go to folder blast data)
+have final fasta file as output
 cite sensila paper for mosquitoes
 
 ## Usage
