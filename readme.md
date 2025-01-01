@@ -187,15 +187,15 @@ https://posit.co/download/rstudio-desktop/
 Code not yet tested in R.
 
 ## fixes
-currently not completely documented code.
-include a more detailed methods on how you queried databases. (go to folder blast data to include photos)
-have final fasta file as output
-cite sensila paper for mosquitoes
+currently no completely documented code.
+include more detailed methods on how you queried databases. (go to folder blast data to include photos)
+have the final fasta file as output
+cite sensilla paper for mosquitoes
 
 ## Usage
 
 ### Part1: Querying NCBI
-run following code in the terminal.
+run the following code in the terminal.
 
 ```bash=  
 #to be able to run script
@@ -203,8 +203,8 @@ chmod +x mechano_aegypti.sh
 ./mechano_aegypti.sh
 ```
 
-### Part2: Subsetting trancriptome data
-run python script to get subset transcriptome data.
+### Part2: Subsetting transcriptome data
+run Python script to get subset transcriptome data.
 In the input folder should be the complete transcriptome.
 ```bash=
 python select_gene_of_interest.py  -i input -o output -g mechano_aegypti.txt
@@ -273,7 +273,7 @@ One of two orthologs to pain in drosophila. If orthologous in function to pain, 
 nociception response to high heat. and involved in gravitaxis[2].
 
 #### ppk 203
-In the ppk phylogenetic tree most related to nach, ppk18 and ppk27 (see figure below, Matthews 2019). nach is associated to liquid clearance in the tracheal system (flybase, 2024).Both ppk18 and ppk27 are predicted to be sodium ion transmemebrane transport genes. Both have no phenotype, both are viable but ppk27 is partially lethal with a majority dying.
+In the ppk phylogenetic tree most related to nach, ppk18 and ppk27 (see figure below, Matthews 2019). nach is associated to liquid clearance in the tracheal system (flybase, 2024). Both ppk18 and ppk27 are predicted to be sodium ion transmembrane transport genes. Both have no phenotype, and both are viable but ppk27 is partially lethal with a majority dying.
 
 <a href="figures/ppk_tree.png">
     <img src="figures/ppk_tree.png" width="250" height="400">
@@ -294,19 +294,19 @@ That leaves us with 5 potential gentle touch receptors.
 1. ~~transient 2 (pyrexia-like)~~
 
 #### Piezo
-Piezo is known as a mechanotransducing gene and has seen to have impacts on egg-laying preferecne when there are mild differences in substrate hardness[4].
+Piezo is known as a mechanotransduction gene and has been seen to have impacts on egg-laying preference when there are mild differences in substrate hardness[4].
 
 #### tmc 5
-Only one tmc gene exists within flies (belonging to the first subfamily of tmcs). However, in *A. aegypti* there are 3 tmc genes each belonging to separate subfamily of tmcs. The least information is known on tmc 5, however tmc 7 has recently been seen in mice to supress piezo activity in peripheral neurons hence reducing mechanosensation in the periphery[5]. tmc 7 in *A. aedes* is also highly expressed, just falling out of the top ten most expressed mechanosensory genes in the abdominal tip. In *D. melanogaster* tmc has also been seen to mediate subtle difference in substrate when determining egg-laying sites[4]. 
+Only one tmc gene exists within flies (belonging to the first subfamily of tmcs). However, in *A. aegypti* there are 3 tmc genes each belonging to a separate subfamily of tmcs. The least information is known on tmc 5, however, tmc 7 has recently been seen in mice to suppress piezo activity in peripheral neurons hence reducing mechanosensation in the periphery[5]. tmc 7 in *A. aedes* is also highly expressed, just falling out of the top ten most expressed mechanosensory genes in the abdominal tip. In *D. melanogaster* tmc has also been seen to mediate subtle difference in substrate when determining egg-laying sites[4]. 
 
 #### Tmem63
 Tmem63 has been seen to mediate food preference based on food grittiness. It is done through the deflection of sensila on the labellum[6].
 
 #### ppk306 & 322
-Both of these ppks seem to fall in the same part of the phylogenetic tree however ppk322 seems to be more closely related to ppk,rpk and ppk26 which are all mechanosensitive genes. rpk is expressed in class III multidendritic neurons required fo gentle touch in *D. melanogaster* larvae [7]. Both ppk and ppk26 are present in multidendritic class IV neurons and use the same pathway for mechanical nociception in *D. melanogaster* larvae although ppk is also involved in thermal nociception[8,9].
+Both of these ppks seem to fall in the same part of the phylogenetic tree however ppk322 seems to be more closely related to ppk,rpk and ppk26 which are all mechanosensitive genes. rpk is expressed in class III multidendritic neurons required for gentle touch in *D. melanogaster* larvae [7]. Both ppk and ppk26 are present in multidendritic class IV neurons and use the same pathway for mechanical nociception in *D. melanogaster* larvae although ppk is also involved in thermal nociception[8,9].
 
 ### best candidates
-Based on observations from previous papers (cite) is has been hypothesized that deflection of sensila on the abdominal tip positvely affect egg-laying in mosquitoes. Knowing mechanosensory neuron types from *D. melanogaster*, type I as opposed to type II are reportedly sensila based mechanosensroy neurons. This immediately places both **Tmem63** and **piezo** as leading candidates to test prefential egg-laying on rougher surfaces in *A. aegypti*. 
+Based on observations from previous papers (cite) is has been hypothesized that the deflection of sensilla on the abdominal tip positively affects egg-laying in mosquitoes. Knowing mechanosensory neuron types from *D. melanogaster*, type I, as opposed to type II, are reportedly sensila-based mechanosensory neurons. This immediately places both **Tmem63** and **piezo** as leading candidates to test preferential egg-laying on rougher surfaces in *A. aegypti*. 
 
 Ranking the candidate genes:
 1. piezo*
@@ -316,7 +316,14 @@ Ranking the candidate genes:
 1. tmc 5
 1. tmc 7 
 
-*piezo and ppk306 have some part of the gene knockout steps done. talk to Ben on what to do.
+BEN's preference:
+1. ppk306* (wanted to check out his previous work, and there is a high expression in males, important in mating)
+2. ppk322
+2. piezo* (already knocked out so interesting)
+1. Tmem63 (not enough info)
+1. tmc 5 (not enough info)
+1. tmc 7 (not enough info)
+
  
 ## Reference
 1. Kefauver, J. M., A. B. Ward, and A. Patapoutian. “Discoveries in Structure and Physiology of Mechanically Activated Ion Channels.” Nature 587, no. 7835 (November 2020): 567–76. https://doi.org/10.1038/s41586-020-2933-1.
