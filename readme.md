@@ -24,18 +24,20 @@
 
   </ol>
 </details>
-## About
-First, research to find out what genes are of interest.
 
-Second, 3 scripts to download 1) summary files genes of interest, 2) select gene expression data for genes of interest 3) plot data.
-(The scripts runs on the terminal and R(Rstudio=2022.12.0+353).)
+## About 
+This Github repository goes overs how candidate mechanosensory genes were selected in *Aedes aegypti*. 
 
-Third, checking litterature to determine best fit.
+First, the research conducted to find out what genes are potentially mechanosensory in *A. aegypti*. 
+
+Second, 3 scripts to 1) download summary files genes of interest, 2) select gene expression data for genes of interest and 3) plot data. (The scripts runs on the terminal and R(Rstudio=2022.12.0+353).) 
+
+Third, checking litterature to determine best candidate gene.
 
 
 ## Research
 ### finding mechanosensory families
-Based off research conducted in *Drosophila melanogaster*, among other model organisms, several gene families are known to be mechanosensory[1].
+Based off research conducted in *Drosophila melanogaster*, amongst other model organisms, several gene families are known to be mechanosensory[1].
 - TRP (transient receptor potential)
 - PPK (pickpockets, a subfamily of Deg/enacs)
 - Piezo
@@ -43,7 +45,7 @@ Based off research conducted in *Drosophila melanogaster*, among other model org
 - TMEM63 (OSCA)
 
 ### TRP
-13 trp genes exist in *Drosophila melanogaster*,TRP,TRPL,TRPgamma,TRPA1,Pain,Pyx, Wtrw, Nompc,Iav,Nan,TRPM,Amo,TRPML. These trp channels belong to 4 subgroups, TRPC, TRPN, TRPM, TRPV[2](see figure below,[2]).
+13 trp genes exist in *Drosophila melanogaster*, TRP, TRPL, TRPgamma, TRPA1, Pain, Pyx, Wtrw, Nompc, Iav, Nan,TRPM, Amo, TRPML. These trp channels belong to 4 subgroups, TRPC, TRPN, TRPM, TRPV[2](see figure below,[2]).
 
 <a href="figures/trp_tree.jpg">
     <img src="figures/trp_tree.jpg" width="500" height="200">
@@ -51,17 +53,17 @@ Based off research conducted in *Drosophila melanogaster*, among other model org
 
 
 15 are found in *Aedes aegypti*.
-source:
-- querying flybase(which in turn is querying orthodb)
-- querying NCBI finds 15 (as seen below)
+As seen by two different querying methods. Firstly, when querying NCBI (exact querying line can be found in the file mechano_aegypti.sh) and when using flybase orthologs to blast against *A. aegypti* dataset. How i queried using flybase and blast is as follows.
 
-#### query flybase
-from flybase i found a ortholog in *Aedes aegypti* for these 4 candidate trp channels:
+#### querying flybase
+I selected one trp gene belonging from each of the trp subgroups(see figure above,[2]) and using flybase, I found an ortholog in *Aedes aegypti* for these 4 candidate trp channels (in flybase, under "Other Organism Orthologs (via OrthoDB)"):
 - trp = trp (gi=5566497) 
 - painless = pain (gi=5568431) 
 - iav =  iav (gi=5571743)
 - TRPML = mucolipin (gi=5571248) 
-Running a blast on uniprot on all  *Aedes aegypti* genes with a minimum e-value of <0.000001 i found the following 15 trp channels.
+
+
+Then running a blast on uniprot using "UniprotKB reference proteomes + Swiss-prot" database and restricting it to *Aedes aegypti* genes with a minimum e-value of <0.000001 i found 15 trp channels over the 4 subgroups.
 
 ##### trp
 - Trp-5566497 (two isoform2)
@@ -87,9 +89,7 @@ TRPML-mucolipin – 5571248(2 isoforms)
 
 ### ppk
 32 are found in mosquitoes.
-source:
-- paper cites 32 [3]
-- querying NCBI finds 32
+32 ppks had previously been described in *A. aegypti* [3] and querying NCBI confirmed this number (exact querying line can be found in the file mechano_aegypti.sh).
 
 ### tmc
 Only one tmc exists in *D. melanogaster*, however in other model species tmc exists divided into three subfamilies (see figure below, Yue, 2019).
@@ -99,23 +99,29 @@ Only one tmc exists in *D. melanogaster*, however in other model species tmc exi
   </a>
   
 3 tmcs were found in *A. aegypti*
-source:
-- querying flybase (which in turn is querying orthodb) finds 1 uncharacterized gene. https://www.orthodb.org/?ncbi=5566135
+Firstly, when querying NCBI (exact querying line can be found in the file **mechano_aegypti.sh**) only two tmc genes are found (tmc5, tmc7). When using flybase, one additional ortholog is found labelled as an uncharacterized gene in *A. aegypti*. Then, blasting tmc7 on NCBI against all *A. aegypti* genes  only returns tmc5 and tmc7 (and their isoforms). How i queried using flybase and blast is as follows.
 
-- querying NCBI finds 2 (tmc5,tmc7)
-  - Blasting tmc7 on NCBI against all *A. aegypti* genes the only returns tmc5 and tmc7 (and their isoforms).
+#### querying flybase
+The one uncharacterized gene match was found in flybase (under "Other Organism Orthologs (via OrthoDB)"). https://www.orthodb.org/?ncbi=5566135
+
+Then running a blast with tmc7 gene on the uniprot using "UniprotKB reference proteomes + Swiss-prot" database and restricting it to *Aedes aegypti* genes with a minimum e-value of <0.000001 i find the 2 other tmc gene.
 
 ### piezo
-piezo =1
-on orthodb only one.
-https://flybase.org/reports/FBgn0264953.htm
-could blast to see if any paralogs
+1 found in *Aedes aegypti*.
+As seen by two different querying methods. Firstly, when querying NCBI (exact querying line can be found in the file **mechano_aegypti.sh**) and when using flybase orthologs to blast against *A. aegypti* dataset. How i queried using flybase and blast is as follows.
+#### querying flybase
+One match was found in flybase (under "Other Organism Orthologs (via OrthoDB)"). https://flybase.org/reports/FBgn0264953.htm
+
+Then running a blast on uniprot using "UniprotKB reference proteomes + Swiss-prot" database and restricting it to *Aedes aegypti* genes with a minimum e-value of <0.000001 i found the 1 piezo gene.
 
 ### tmem63
-tmem63 =1
-interestingly no tmem63 match to fruit fly
-https://flybase.org/reports/FBgn0033259.htm
+1 found in *Aedes aegypti*.
+As seen by two different querying methods. Firstly, when querying NCBI (exact querying line can be found in the file **mechano_aegypti.sh**). Secondly tried to find an ortholog on flybase and none existed. However, when blasting the *D. melanogaster* gene against the *A. aegypti* dataset the 1 tmem63 was found. How i queried using flybase and blast is as follows.
 
+#### querying flybase
+No match was found in flybase (under "Other Organism Orthologs (via OrthoDB)"). https://flybase.org/reports/FBgn0033259.htm
+
+Then running a blast on uniprot using "UniprotKB reference proteomes + Swiss-prot" database and restricting it to *Aedes aegypti* genes with a minimum e-value of <0.000001 i found the 1 tmem63 gene.
 
 ## Installation
 This program can be directly installed from github (green Code button, top right).
@@ -182,7 +188,7 @@ Code not yet tested in R.
 
 ## fixes
 currently not completely documented code.
-include a more detailed methods on how you queried databases. (go to folder blast data)
+include a more detailed methods on how you queried databases. (go to folder blast data to include photos)
 have final fasta file as output
 cite sensila paper for mosquitoes
 
