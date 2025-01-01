@@ -71,6 +71,7 @@ Then running a blast on uniprot using "UniprotKB reference proteomes + Swiss-pro
 - Trp-like – 110681253 (2 isoforms)
 - Nompc-5575210 (9 isoforms?)
 - Trpm – 5577794 (10 isoforms)
+- 
 <a href="figures/trp_blast_screenshot.png">
     <img src="figures/trp_blast_screenshot.png" width="400" height="200">
   </a>
@@ -83,6 +84,7 @@ Then running a blast on uniprot using "UniprotKB reference proteomes + Swiss-pro
 - Pyx – 5564219
 - (wtrw)Pyx-like 110679259
 - (wtrw)Pyx-like 110679258
+  
 <a href="figures/pain_blast_screenshot.png">
     <img src="figures/pain_blast_screenshot.png" width="400" height="200">
   </a>
@@ -90,12 +92,14 @@ Then running a blast on uniprot using "UniprotKB reference proteomes + Swiss-pro
 ##### iav
 iav - 5571743
 nan - 5568592
+
 <a href="figures/iav_blast_screenshot.png">
     <img src="figures/iav_blast_screenshot.png" width="400" height="200">
   </a>
 
 ##### mucolipin
 TRPML-mucolipin – 5571248(2 isoforms)
+
 <a href="figures/mucolipin_blast_screenshot.png">
     <img src="figures/mucolipin_blast_screenshot.png" width="400" height="200">
   </a>
@@ -118,9 +122,11 @@ Firstly, when querying NCBI (exact querying line can be found in the file **mech
 The one uncharacterized gene match was found in flybase (under "Other Organism Orthologs (via OrthoDB)"). https://www.orthodb.org/?ncbi=5566135
 
 Then running a blast with tmc7 gene on the uniprot using "UniprotKB reference proteomes + Swiss-prot" database and restricting it to *Aedes aegypti* genes with a minimum e-value of <0.000001 I find the 2 other tmc gene.
+
 <a href="figures/tmc_blast_screenshot.png">
     <img src="figures/tmc_blast_screenshot.png" width="400" height="200">
   </a>
+  
 ### piezo
 1 found in *Aedes aegypti*.
 As seen by two different querying methods. Firstly, when querying NCBI (exact querying line can be found in the file **mechano_aegypti.sh**) and when using flybase orthologs to blast against *A. aegypti* dataset. How i queried using flybase and blast is as follows.
@@ -128,9 +134,11 @@ As seen by two different querying methods. Firstly, when querying NCBI (exact qu
 One match was found in flybase (under "Other Organism Orthologs (via OrthoDB)"). https://flybase.org/reports/FBgn0264953.htm
 
 Then running a blast on uniprot using "UniprotKB reference proteomes + Swiss-prot" database and restricting it to *Aedes aegypti* genes with a minimum e-value of <0.000001 i found the 1 piezo gene.
+
 <a href="figures/piezo_blast_screenshot.png">
     <img src="figures/piezo_blast_screenshot.png" width="400" height="200">
   </a>
+  
 ### tmem63
 1 found in *Aedes aegypti*.
 As seen by two different querying methods. Firstly, when querying NCBI (exact querying line can be found in the file **mechano_aegypti.sh**). Secondly tried to find an ortholog on flybase and none existed. However, when blasting the *D. melanogaster* gene against the *A. aegypti* dataset the 1 tmem63 was found. How i queried using flybase and blast is as follows.
@@ -139,9 +147,11 @@ As seen by two different querying methods. Firstly, when querying NCBI (exact qu
 No match was found in flybase (under "Other Organism Orthologs (via OrthoDB)"). https://flybase.org/reports/FBgn0033259.htm
 
 Then running a blast on uniprot using "UniprotKB reference proteomes + Swiss-prot" database and restricting it to *Aedes aegypti* genes with a minimum e-value of <0.000001 i found the 1 tmem63 gene.
+
 <a href="figures/tmem63_blast_screenshot.png">
     <img src="figures/tmem63_blast_screenshot.png" width="400" height="200">
   </a>
+  
 ## Installation
 This program can be directly installed from github (green Code button, top right).
 
