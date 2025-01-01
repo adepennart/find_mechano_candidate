@@ -306,7 +306,7 @@ Tmem63 has been seen to mediate food preference based on food grittiness. It is 
 Both of these ppks seem to fall in the same part of the phylogenetic tree however ppk322 seems to be more closely related to ppk,rpk and ppk26 which are all mechanosensitive genes. rpk is expressed in class III multidendritic neurons required for gentle touch in *D. melanogaster* larvae [7]. Both ppk and ppk26 are present in multidendritic class IV neurons and use the same pathway for mechanical nociception in *D. melanogaster* larvae although ppk is also involved in thermal nociception[8,9].
 
 ### best candidates
-Based on observations from previous papers (cite) is has been hypothesized that the deflection of sensilla on the abdominal tip positively affects egg-laying in mosquitoes. Knowing mechanosensory neuron types from *D. melanogaster*, type I, as opposed to type II, are reportedly sensila-based mechanosensory neurons. This immediately places both **Tmem63** and **piezo** as leading candidates to test preferential egg-laying on rougher surfaces in *A. aegypti*. 
+Based on observations from previous papers [10] is has been hypothesized that the deflection of sensilla on the abdominal tip positively affects egg-laying in mosquitoes. Knowing mechanosensory neuron types from *D. melanogaster*, type I, as opposed to type II, are reportedly sensila-based mechanosensory neurons. This immediately places both **Tmem63** and **piezo** as leading candidates to test preferential egg-laying on rougher surfaces in *A. aegypti*. 
 
 Ranking the candidate genes:
 1. piezo*
@@ -335,3 +335,4 @@ BEN's preference:
 7. Tsubouchi, Asako, Jason C. Caldwell, and W. Daniel Tracey. “Dendritic Filopodia, Ripped Pocket, NOMPC, and NMDARs Contribute to the Sense of Touch in Drosophila Larvae.” Current Biology 22, no. 22 (November 20, 2012): 2124–34. https://doi.org/10.1016/j.cub.2012.09.019.
 8. Guo, Yanmeng, Yuping Wang, Qingxiu Wang, and Zuoren Wang. “The Role of PPK26 in Drosophila Larval Mechanical Nociception.” Cell Reports 9, no. 4 (November 20, 2014): 1183–90. https://doi.org/10.1016/j.celrep.2014.10.020.
 9. Zhong, Lixian, Richard Y. Hwang, and W. Daniel Tracey. “Pickpocket Is a DEG/ENaC Protein Required for Mechanical Nociception in Drosophila Larvae.” Current Biology 20, no. 5 (March 9, 2010): 429–34. https://doi.org/10.1016/j.cub.2009.12.057.
+10. Rossignol, P. A., and S. B. McIver. “Fine Structure and Role in Behavior of Sensilla on the Terminalia of Aedes Aegypti (L.) (Diptera: Culicidae).” Journal of Morphology 151, no. 3 (1977): 419–37. https://doi.org/10.1002/jmor.1051510307.
