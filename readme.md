@@ -71,6 +71,10 @@ Then running a blast on uniprot using "UniprotKB reference proteomes + Swiss-pro
 - Trp-like – 110681253 (2 isoforms)
 - Nompc-5575210 (9 isoforms?)
 - Trpm – 5577794 (10 isoforms)
+<a href="figures/trp_blast_screenshot.png">
+    <img src="figures/trp_blast_screenshot.png" width="400" height="200">
+  </a>
+
 
 ##### pain
 - Pain – 5568431
@@ -79,13 +83,22 @@ Then running a blast on uniprot using "UniprotKB reference proteomes + Swiss-pro
 - Pyx – 5564219
 - (wtrw)Pyx-like 110679259
 - (wtrw)Pyx-like 110679258
+<a href="figures/pain_blast_screenshot.png">
+    <img src="figures/pain_blast_screenshot.png" width="400" height="200">
+  </a>
 
 ##### iav
 iav - 5571743
 nan - 5568592
+<a href="figures/iav_blast_screenshot.png">
+    <img src="figures/iav_blast_screenshot.png" width="400" height="200">
+  </a>
 
 ##### mucolipin
 TRPML-mucolipin – 5571248(2 isoforms)
+<a href="figures/mucolipin_blast_screenshot.png">
+    <img src="figures/mucolipin_blast_screenshot.png" width="400" height="200">
+  </a>
 
 ### ppk
 32 are found in mosquitoes.
