@@ -246,6 +246,14 @@ Once this is changed the script can be run by pressing SOURCE in the top right o
 
 The final output should be two pdfs plotting the data (abdominal_tip_mechano.pdf,all_tissue_mechano.pdf) and a list of the top ten most expressed mechanosensory genes in the abdominal tip of the female *A. aegypti*.
 
+<a href="/pdfs/ProjMarr_slides.pdf" class="image fit">
+  <img src="images/marr_pic.jpg" alt="">
+</a>
+
+<object data="figures/abdominal_tip_mechano.pdf" width="1000" height="1000" type='application/pdf'/>
+
+
+
 
 <embed src="figures/abdominal_tip_mechano.pdf" width="400" height="400", type="application/pdf"/>
 
