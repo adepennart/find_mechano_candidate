@@ -247,11 +247,11 @@ Once this is changed the script can be run by pressing SOURCE in the top right o
 The final output should be two pdfs plotting the data (abdominal_tip_mechano.pdf,all_tissue_mechano.pdf) and a list of the top ten most expressed mechanosensory genes in the abdominal tip of the female *A. aegypti*.
 
 <a href="figures/abdominal_tip_mechano.pdf">
-    <img src="figures/abdominal_tip_mechano.pdf" width="400" height="400">
+    <embed src="figures/abdominal_tip_mechano.pdf" width="400" height="400">
   </a>
 
 <a href="figures/all_tissue_mechano.pdf">
-    <img src="figures/all_tissue_mechano.pdf" width="400" height="400">
+    <embed src="figures/all_tissue_mechano.pdf" width="400" height="400">
   </a>
 
     transient2                                ppk322 
