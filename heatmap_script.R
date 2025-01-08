@@ -66,4 +66,4 @@ dev.off()
 #get top ten results, AAEL004397 is pain
 print(tail(sort(log2[,2]),10))
 top_ten<-(tail(sort(log2[,2]),10))
-write.csv(top_ten, "top_ten_mechano.csv")
+write.csv(top_ten, "../figures/top_ten_mechano.csv")
