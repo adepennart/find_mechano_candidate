@@ -23,7 +23,7 @@ log <- log10(subsetted+1) #add 1 to have all values above 0 and avoid inf values
 
 hmcol <- rev(colorRampPalette( brewer.pal(9, "RdBu"))(100))#select heatmap colour palette and reverse order (i.e. blue to red)
 #plot
-pdf("../figures/all_tissue_mechano.pdf") 
+pdf("../figures/abdominal_tip_mechano.pdf") 
 heatmap.2(log , col = hmcol, scale = "none" , dendrogram = "none" ,
           trace = "none" , margin = c (9.25 ,18) ,cexRow = 0.5 ) #Rowv = FALSE ,  Colv = FALSE ))
 dev.off()
@@ -58,7 +58,7 @@ log2 <- log10(meaned_t+1) #add 1 to have all values above 0 and avoid inf values
 hmcol <- rev(colorRampPalette( brewer.pal(9, "RdBu"))(100))#select heatmap colour palette and reverse order (i.e. blue to red)
 
 #plot, At female abdominal tip, AT male abdominal tip
-pdf("../figures/abdominal_tip_mechano.pdf") 
+pdf("../figures/all_tissue_mechano.pdf") 
 heatmap.2(log2 , col = hmcol, scale = "none" , dendrogram = "none" , 
           trace = "none" , margin = c (9.25 ,19),cexRow = 0.5 )
 dev.off()

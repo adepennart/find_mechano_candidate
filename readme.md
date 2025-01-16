@@ -220,6 +220,7 @@ currently no completely documented code.
 include more detailed methods on how you queried databases. (go to folder blast data to include photos)
 have the final fasta file as output
 cite sensilla paper for mosquitoes
+fasta code (mechano_aegypti_fasta.sh), says error but seems to run till end
 
 ## Usage
 
@@ -231,6 +232,13 @@ run the following code in the terminal.
 chmod +x mechano_aegypti.sh
 ./mechano_aegypti.sh
 ```
+In order to get CDS and mRNA fasta files for all the mechanosensory genes of interest the following code is run.
+```bash=  
+chmod +x mechano_aegypti_fna.sh
+./mechano_aegypti_fna.sh
+```
+This will output two files mechano_aegypti_mRNA.fna and mechano_aegypti_CDS.fna, first with all the isoforms of your gene of interest and the second the coding region (including exon and introns) of your gene of interest.
+
 
 ### Part2: Subsetting transcriptome data
 run Python script to get subset transcriptome data.
