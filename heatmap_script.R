@@ -40,8 +40,9 @@ small_t <- t(small_2) #pivot table
 tissue <- vector()
 for (variable in row.names(small_t)) {
  # new<-substring(toupper(as.character(variable)),4,5) #here we are disregarding male/female
-  new<-substring((as.character(variable)),4,5) #here we are not disregarding male/female
-  tissue<-append(tissue,new)  
+  new<-substring((as.character(variable)),1,5) #here we are not disregarding male/female
+  tissue<-append(tissue,new) 
+  print(new)
 }
 
 #aggregate values by mean by tissue
@@ -60,10 +61,10 @@ hmcol <- rev(colorRampPalette( brewer.pal(9, "RdBu"))(100))#select heatmap colou
 #plot, At female abdominal tip, AT male abdominal tip
 pdf("../figures/all_tissue_mechano.pdf") 
 heatmap.2(log2 , col = hmcol, scale = "none" , dendrogram = "none" , 
-          trace = "none" , margin = c (9.25 ,19),cexRow = 0.5 )
+          trace = "none" , margin = c (9.25 ,17),cexRow = 0.5 )
 dev.off()
 
-#get top ten results, AAEL004397 is pain
-print(tail(sort(log2[,2]),10))
+#get top ten results, uncharacterized LOC5566135 is tmc-1 like
+print(tail(sort(log2[,2]),20))
 top_ten<-(tail(sort(log2[,2]),10))
 write.csv(top_ten, "../figures/top_ten_mechano.csv")
